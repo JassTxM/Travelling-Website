@@ -1,0 +1,294 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Background Styling */
+body {
+    background: linear-gradient(135deg, #7a1f2d, #ff758f); /* Pinkish-red gradient */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Subtle Glow Effect */
+body::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 80%);
+    opacity: 0.4;
+}
+
+/* Softer Glitter Effect */
+body::after {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 12%, transparent 85%);
+    opacity: 0.3;
+    animation: glitter 3s infinite linear alternate;
+}
+
+/* Softer Glitter Animation */
+@keyframes glitter {
+    0% {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 80%);
+    }
+    50% {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 12%, transparent 85%);
+    }
+    100% {
+        background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 10%, transparent 80%);
+    }
+}
+
+/* Main Container */
+.masterContainer {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+    
+    /* Entry Animation */
+    animation: fadeIn 0.8s ease-in-out;
+}
+
+/* Zoom-in-out on Hover */
+.masterContainer:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 40px rgba(255, 117, 143, 0.4);
+}
+
+/* Entry Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* New Fortunez Styling */
+.boxItems p {
+    font-size: 22px;
+    font-weight: bold;
+    font-family: "Montserrat", sans-serif;
+    color: #ff3b58;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 15px;
+}
+
+/* Graphic Section */
+#graphic img {
+    width: 90px;
+    margin-bottom: 12px;
+}
+
+#graphic p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #444;
+}
+
+/* Input Field Styling */
+.inputs {
+    text-align: left;
+    width: 100%;
+    margin-bottom: 18px;
+}
+
+.inputs label {
+    font-size: 14px;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+    color: #ff3b58;
+}
+
+.inputs input {
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ff3b58;
+    border-radius: 10px;
+    outline: none;
+    font-size: 14px;
+    background: #f5f5f5;
+    color: #000000;
+    transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s ease-in-out;
+    transform: scale(1);
+}
+
+/* Zoom Effect when Hovering OR Writing */
+.inputs input:hover,
+.inputs input:focus {
+    transform: scale(1.05);
+    border-color: #ff758f;
+    box-shadow: 0 0 10px rgba(255, 117, 143, 0.6);
+}
+
+/* Reset Zoom Effect when neither hovering nor writing */
+.inputs input:not(:hover):not(:focus) {
+    transform: scale(1);
+}
+
+/* Submit Button */
+#submitButton {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    background: #b71c1c;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+    margin-top: 10px;
+}
+
+#submitButton:hover {
+    background: #ff3b58;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(255, 59, 88, 0.4);
+}
+
+/* Create Account Link */
+.create-account {
+    display: block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: bold;
+    color: #b71c1c;
+    text-decoration: none;
+    margin-top: 10px;
+    transition: color 0.3s ease-in-out;
+}
+
+/* Change Color on Hover */
+.create-account:hover {
+    color: #ff3b58;
+    text-decoration: underline;
+}
+
+/* Visited Link */
+.create-account:visited {
+    color: #545454;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+    .masterContainer {
+        padding: 30px;
+        max-width: 90%;
+    }
+
+    #graphic img {
+        width: 80px;
+    }
+
+    .inputs input {
+        padding: 10px;
+        font-size: 13px;
+    }
+
+    #submitButton {
+        padding: 12px;
+        font-size: 18px;
+    }
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Styling for the Welcome Back Text */
+.welcome-text {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff3b58;
+    text-transform: uppercase;
+    text-align: center;
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    padding-bottom: 5px;
+}
+
+/* Underline Effect */
+.welcome-text::after {
+    content: "";
+    position: absolute;
+    width: 0%;
+    height: 3px;
+    background: #ff3b58;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.4s ease-in-out;
+}
+
+/* Underline appears on hover */
+.welcome-text:hover::after {
+    width: 100%;
+}
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+/* Page Entry Animation */
+@keyframes fadeInZoom {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Apply animation to the main container */
+.masterContainer {
+    width: 100%;
+    max-width: 450px;
+    background: #ffffff;
+    padding: 40px 35px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    transition: box-shadow 0.3s ease-in-out, transform 0.2s ease-in-out;
+    
+    /* Entry animation */
+    animation: fadeInZoom 0.6s ease-out;
+}
