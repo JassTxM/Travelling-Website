@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sign Up - Weather App</title>
+    <link rel="stylesheet" href="./signup.css">
 
 </style>
 </head>
@@ -40,6 +41,7 @@ function validateForm() {
     var email = document.getElementById("email").value;
     var password = document.getElementById("password").value;
     var confirmPassword = document.getElementById("confirm-password").value;
+    let isValid = true;
 
     // Check if all fields are filled
     if (username == "" || email == "" || password == "" || confirmPassword == "") {
@@ -61,7 +63,13 @@ function validateForm() {
     }
 
     // Form is valid
-    alert("Sign up successful!");
+    
+    if (isValid) {
+        window.location.href = "./index.html";
+        alert("Sign up successful!");
+    }
+    
+  
     return true;
 }
 
